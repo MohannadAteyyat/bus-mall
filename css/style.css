@@ -1,0 +1,48 @@
+body {
+    width: 90%;
+}
+h1{
+    margin: 50px;
+    font-size: 35px ;
+    font-weight: 900;
+    text-align: center;
+
+
+}
+img {
+    position: relative;
+    left:100px ;
+width: 30%;
+padding: 10px;
+
+}
+footer {
+    text-align: center;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    margin: 50px;
+    font-size: 25px ;
+    font-weight: 900;
+    text-align: center;
+
+
+}
