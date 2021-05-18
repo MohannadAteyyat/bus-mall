@@ -17,7 +17,7 @@ let userAttempt = 0;
 
 // console.log(maxAttempts);
 
-
+let preventIteriation=[];
 let firstImageindex;
 let secondImageindex;
 let thirdImageindex;
@@ -73,99 +73,27 @@ function render() {
     thirdImageindex = random();
 
 
-    let preventIteriation = [allImages[firstImageindex].name, allImages[secondImageindex].name, allImages[thirdImageindex].name]
     // console.log(preventIteriation);
     // console.log(allImages[firstImageindex].name);
     while (firstImageindex === secondImageindex || firstImageindex === thirdImageindex || secondImageindex === thirdImageindex
 
 
-        || imagesArray[firstImageindex] === preventIteriation[0]
-        || imagesArray[secondImageindex] === preventIteriation[1] || imagesArray[thirdImageindex] === preventIteriation[2]) {
-        // console.log(preventIteriation[0]);
+        ||  preventIteriation.includes(firstImageindex)
+        || preventIteriation.includes(secondImageindex) || preventIteriation.includes(thirdImageindex)) {
+       
         firstImageindex = random();
 
-        // console.log(' firstImageindex before second attept ', firstImageindex);
-        // while (firstImageindex===thirdImageindex)
-
         secondImageindex = random();
-        // console.log(' secondImageindex before second attept ', secondImageindex);
-
-
-        // while (secondImageindex===thirdImageindex)
+        
         thirdImageindex = random();
-        // console.log(' thirdImageindex before second attept ', thirdImageindex);
+        
     }
 
-    // firstImageElement.src = allImages[firstImageindex].path
-    // secondImageElement.src = allImages[secondImageindex].path
-    // thirdImageElement.src = allImages[thirdImageindex].path
+    preventIteriation = [firstImageindex, secondImageindex, thirdImageindex]
+
+  console.log(preventIteriation);
 
 
-    //    firstImageElement.src = allImages [firstImageindex].path
-    //    secondImageElement.src = allImages [secondImageindex].path
-    //    thirdImageElement.src = allImages [thirdImageindex].path
-    // let preventIteriation = [allImages[firstImageindex], allImages[secondImageindex], allImages[thirdImageindex]]
-    //  while  (firstImageElement === preventIteriation[0]
-    //     || secondImageElement === preventIteriation[1] || thirdImageElement === preventIteriation[2]) {
-
-    //     firstImageindex = random();
-    //     console.log(' firstImageindex after second attept ', firstImageindex);
-    //     secondImageindex = random();
-    //     console.log(' secondImageindex after second attept ', secondImageindex);
-    //     thirdImageindex = random();
-    //     console.log(' thirdImageindex afre second attept ', thirdImageindex);
-
-    // firstImageElement.src = allImages[firstImageindex].path
-    // secondImageElement.src = allImages[secondImageindex].path
-    // thirdImageElement.src = allImages[thirdImageindex].path
-
-
-
-
-
-
-
-
-    // while (allImages [firstImageindex].name === preventIteriation[0] || allImages [secondImageindex].name === preventIteriation[1] || allImages [thirdImageindex].name === preventIteriation[2] ); 
-    // {
-    //     firstImageindex= random();
-    //     console.log(' firstImageindex after second attept ' , firstImageindex);
-    //     secondImageindex= random();
-    //     console.log(' secondImageindex after second attept ' , secondImageindex);
-    //     thirdImageindex= random();
-    //     console.log(' thirdImageindex after second attept ' , thirdImageindex);
-    // if (firstImageindex===secondImageindex || firstImageindex===thirdImageindex  || secondImageindex=== thirdImageindex) {
-    //     firstImageindex= random();
-    //     secondImageindex= random();
-    //     thirdImageindex= random();
-    // }
-
-
-
-
-
-    // if (
-    //     firstImageElement.src=== preventIteriation[0] 
-    //      || secondImageElement.src === preventIteriation[1] || thirdImageElement.src=== preventIteriation[2] )
-    // {
-    //      firstImageindex= random();
-    //  console.log(' firstImageindex before second attept ' , firstImageindex);
-    //  // while (firstImageindex===thirdImageindex)
-
-    //  secondImageindex= random();
-    //  console.log(' secondImageindex before second attept ' , secondImageindex);
-
-    //  // while (secondImageindex===thirdImageindex)
-    //  thirdImageindex= random();
-
-    //  console.log(' thirdImageindex before second attept ' , thirdImageindex);
-
-    // }
-
-    // console.log(firstImageindex);
-    // console.log(secondImageindex);
-    // console.log(thirdImageindex);
-    // else {
     firstImageElement.src = allImages[firstImageindex].path
     secondImageElement.src = allImages[secondImageindex].path
     thirdImageElement.src = allImages[thirdImageindex].path
@@ -175,9 +103,9 @@ function render() {
     allImages[secondImageindex].numberOfVewis = allImages[secondImageindex].numberOfVewis + 1
     allImages[thirdImageindex].numberOfVewis = allImages[thirdImageindex].numberOfVewis + 1
 
-    allImages[firstImageindex].numberOfVewis+1
-    allImages[secondImageindex].numberOfVewis+1
-    allImages[thirdImageindex].numberOfVewis+1
+    // allImages[firstImageindex].numberOfVewis+1
+    // allImages[secondImageindex].numberOfVewis+1
+    // allImages[thirdImageindex].numberOfVewis+1
 }
 render()
 
@@ -206,16 +134,16 @@ thirdImageElement.addEventListener('click', userClick);
 
 let Form = document.getElementById('Form')
 Form.addEventListener('submit', clicktoAdd);
-let maxAttempts;
+let maxAttempts=25;
 function clicktoAdd(event) {
     event.preventDefault();
     maxAttempts = event.target.NumberOfAttempts.value;
     if (maxAttempts < 25) {
         maxAttempts = event.target.NumberOfAttempts.value;
-    } else {
-        maxAttempts = 25;
-    }
-}
+//     } else {
+//         maxAttempts = 25;
+  }
+ }
 function userClick(event) {
     // console.log(event.target.id);
     userAttempt = userAttempt + 1
@@ -328,3 +256,153 @@ let myChart = new Chart(ctx, {
 
 // console.log(votesArr);
 // console.log(numberOfVewisArr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // firstImageElement.src = allImages[firstImageindex].path
+    // secondImageElement.src = allImages[secondImageindex].path
+    // thirdImageElement.src = allImages[thirdImageindex].path
+
+
+    //    firstImageElement.src = allImages [firstImageindex].path
+    //    secondImageElement.src = allImages [secondImageindex].path
+    //    thirdImageElement.src = allImages [thirdImageindex].path
+    // let preventIteriation = [allImages[firstImageindex], allImages[secondImageindex], allImages[thirdImageindex]]
+    //  while  (firstImageElement === preventIteriation[0]
+    //     || secondImageElement === preventIteriation[1] || thirdImageElement === preventIteriation[2]) {
+
+    //     firstImageindex = random();
+    //     console.log(' firstImageindex after second attept ', firstImageindex);
+    //     secondImageindex = random();
+    //     console.log(' secondImageindex after second attept ', secondImageindex);
+    //     thirdImageindex = random();
+    //     console.log(' thirdImageindex afre second attept ', thirdImageindex);
+
+    // firstImageElement.src = allImages[firstImageindex].path
+    // secondImageElement.src = allImages[secondImageindex].path
+    // thirdImageElement.src = allImages[thirdImageindex].path
+
+
+
+
+
+
+
+
+    // while (allImages [firstImageindex].name === preventIteriation[0] || allImages [secondImageindex].name === preventIteriation[1] || allImages [thirdImageindex].name === preventIteriation[2] ); 
+    // {
+    //     firstImageindex= random();
+    //     console.log(' firstImageindex after second attept ' , firstImageindex);
+    //     secondImageindex= random();
+    //     console.log(' secondImageindex after second attept ' , secondImageindex);
+    //     thirdImageindex= random();
+    //     console.log(' thirdImageindex after second attept ' , thirdImageindex);
+    // if (firstImageindex===secondImageindex || firstImageindex===thirdImageindex  || secondImageindex=== thirdImageindex) {
+    //     firstImageindex= random();
+    //     secondImageindex= random();
+    //     thirdImageindex= random();
+    // }
+
+
+
+
+
+    // if (
+    //     firstImageElement.src=== preventIteriation[0] 
+    //      || secondImageElement.src === preventIteriation[1] || thirdImageElement.src=== preventIteriation[2] )
+    // {
+    //      firstImageindex= random();
+    //  console.log(' firstImageindex before second attept ' , firstImageindex);
+    //  // while (firstImageindex===thirdImageindex)
+
+    //  secondImageindex= random();
+    //  console.log(' secondImageindex before second attept ' , secondImageindex);
+
+    //  // while (secondImageindex===thirdImageindex)
+    //  thirdImageindex= random();
+
+    //  console.log(' thirdImageindex before second attept ' , thirdImageindex);
+
+    // }
+
+    // console.log(firstImageindex);
+    // console.log(secondImageindex);
+    // console.log(thirdImageindex);
+    // else {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
