@@ -4,7 +4,7 @@ let secondImageElement = document.getElementById('second-image')
 let thirdImageElement = document.getElementById('third-image')
 // let maxAttempts;
 
-// let enter=prompt('wnter maxAttempts')
+// let enter=prompt('enter maxAttempts')
 // if (enter>25) {
 //     maxAttempts=25
 // }
@@ -74,6 +74,14 @@ thirdImageindex= random();
 firstImageElement.src = allImages [firstImageindex].path
 secondImageElement.src = allImages [secondImageindex].path
 thirdImageElement.src = allImages [thirdImageindex].path
+
+
+allImages[firstImageindex].numberOfVewis=allImages[firstImageindex].numberOfVewis + 1
+allImages[secondImageindex].numberOfVewis=allImages[secondImageindex].numberOfVewis+1 
+allImages[thirdImageindex].numberOfVewis=allImages[thirdImageindex].numberOfVewis+1 
+
+
+
 }
 render () 
 
@@ -83,23 +91,24 @@ thirdImageElement.addEventListener('click' , userClick);
 
 
 
-let attemPs=document.getElementById('btn1')
-attemPs.addEventListener('submit', clicktoAdd);
+let Form=document.getElementById('Form')
+Form.addEventListener('submit', clicktoAdd);
+
 let maxAttempts;
 function clicktoAdd (event) {
     
     event.preventDefault();
-    maxAttempts=event.target.NumberOfAttempts.value
+    maxAttempts=event.target.NumberOfAttempts.value;
 if (maxAttempts<25) {
-    userClick() ;
+    maxAttempts=event.target.NumberOfAttempts.value;
     
 } else {
     maxAttempts=25;
-    userClick() ;
+    
 }
 }
 
-console.log(attemPs);
+
 
 
 
@@ -114,19 +123,19 @@ function userClick(event) {
     if (userAttempt <=  maxAttempts){
 if (event.target.id==='first-image'){
 allImages[firstImageindex].votes=allImages[firstImageindex].votes + 1
-allImages[firstImageindex].numberOfVewis=allImages[firstImageindex].numberOfVewis + 1
+
 
 // console.log('first-votes', allImages[firstImageindex].votes++);
 }
   else if (event.target.id==='second-image'){
         allImages[secondImageindex].votes=allImages[secondImageindex].votes+1 
-        allImages[secondImageindex].numberOfVewis=allImages[secondImageindex].numberOfVewis+1 
+        
        
         // console.log('secong-votes', allImages[secondImageindex].votes++);
             }
    else  if  (event.target.id==='third-image'){
                 allImages[thirdImageindex].votes=allImages[thirdImageindex].votes+1 
-                allImages[thirdImageindex].numberOfVewis=allImages[thirdImageindex].numberOfVewis+1 
+                
                 
                 // console.log('third-votes', allImages[thirdImageindex].votes++);
                     }      
