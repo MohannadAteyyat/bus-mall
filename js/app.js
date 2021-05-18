@@ -41,10 +41,14 @@ new GetImage('cthulhu', 'Img/cthulhu.jpg');
 new GetImage('dog-duck', 'Img/dog-duck.jpg');
 new GetImage('dragon', 'Img/dragon.jpg');
 new GetImage('pen', 'Img/pen.jpg');
-new GetImage('pet-sweep', 'Img/pet-sweep.jpg');
 new GetImage('scissors', 'Img/scissors.jpg');
 new GetImage('shark', 'Img/shark.jpg');
 new GetImage('sweep', 'Img/sweep.png');
+new GetImage('tauntaun', 'Img/tauntaun.jpg');
+new GetImage('unicorn', 'Img/unicorn.jpg');
+new GetImage('water-can', 'Img/water-can.jpg');
+new GetImage('wine-glass', 'Img/wine-glass.jpg');
+new GetImage('pet-sweep', 'Img/pet-sweep.jpg');
 
 function random () {
     // for (let i = 0; i < allImages.length; i++) {
@@ -94,7 +98,7 @@ thirdImageElement.addEventListener('click' , userClick);
 let Form=document.getElementById('Form')
 Form.addEventListener('submit', clicktoAdd);
 
-let maxAttempts;
+let maxAttempts=25;
 function clicktoAdd (event) {
     
     event.preventDefault();
@@ -102,8 +106,8 @@ function clicktoAdd (event) {
 if (maxAttempts<25) {
     maxAttempts=event.target.NumberOfAttempts.value;
     
-} else {
-    maxAttempts=25;
+// } else {
+//     maxAttempts=25;
     
 }
 }
