@@ -149,7 +149,10 @@ function clicktoAdd(event) {
 //     } else {
 //         maxAttempts = 25;
   }
+  Number1.reset()
  }
+
+ 
 function userClick(event) {
     // console.log(event.target.id);
     userAttempt = userAttempt + 1
@@ -194,6 +197,8 @@ function Results(event) {
 numberOfVewisArr.push(GetImage.allImages[i].numberOfVewis)
     }
     chart();
+    let convertNumbers=JSON.stringify(GetImage.allImages)
+   localStorage.setItem('allImages',convertNumbers)
 }
 
 
@@ -368,8 +373,8 @@ let myChart = new Chart(ctx, {
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-let convertNumbers=JSON.stringify(GetImage.allImages)
-   localStorage.setItem('allImages',convertNumbers)
+// let convertNumbers=JSON.stringify(GetImage.allImages)
+//    localStorage.setItem('allImages',convertNumbers)
 
 //   console.log(convertNumbers);
 
